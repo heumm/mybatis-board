@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+h1 {
+	color:burlywood; font-size:60px; font-family:Gabriola;
+}
+
+.header-wrap {
+	display: flex;
+	height: 150px;
+	justify-content: center; 
+}

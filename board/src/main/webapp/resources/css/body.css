@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.wrap {
+	height: 600px;
+	display: flex;
+	/*justify-content: center;*/
+	flex-flow: column;
+}
+.wrap>* {
+	align-self: center;
+}
