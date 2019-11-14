@@ -1,5 +1,7 @@
 package com.care.member_dao;
 
-public class MemberDAO {
+import org.apache.ibatis.session.SqlSession;
 
+public class MemberDAO {
+	SqlSession sqlSession;
 }
