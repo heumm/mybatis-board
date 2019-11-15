@@ -5,10 +5,10 @@
 <mapper namespace="member">
  
     <!-- id는 쿼리문을 무엇으로 보낼 것인지 resultType은 결과물이 무엇인지 -->
-    <select id="login" resultType="com.care.member_dto.MemberDTO">
+    <select id="login" resultType="com.care.member_dto.MemberDTO" parameterType="String">
+ 		
  
- 
-        select * from member where name='#{key}'
+        select * from member02 where id=#{id}
  
     </select>
  

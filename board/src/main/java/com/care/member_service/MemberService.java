@@ -1,5 +1,7 @@
 package com.care.member_service;
 
+import org.springframework.ui.Model;
+
 public interface MemberService {
-	public void login();
+	public void login(Model model);
 }

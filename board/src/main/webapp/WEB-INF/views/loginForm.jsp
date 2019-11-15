@@ -16,7 +16,7 @@
 	<div class="wrap">
 		<h2>로그인 페이지입니다.</h2>
 		<div>
-			<form method="post" action="checkLogin">
+			<form method="post" action="login">
 				<input type="text" name="id" placeholder="아이디"><br>
 				<input type="password" name="pw" placeholder="비밀번호"><br>
 				<input type="submit" value="로그인">

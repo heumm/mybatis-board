@@ -10,9 +10,9 @@ public class MemberDAO {
 	@Autowired
 	SqlSession sqlSession;
 	
-	public void login() {
+	public void login(String id) {
 		
-		sqlSession.selectOne("member.login");
+		System.out.println(sqlSession.selectOne("member.login", id));
 	}
 	
 }

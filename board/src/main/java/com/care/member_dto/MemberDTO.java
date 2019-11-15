@@ -18,4 +18,10 @@ public class MemberDTO {
 		this.pw = pw;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "userid=" + id + ", userpw=" + pw;
+	}
+	
 }
