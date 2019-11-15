@@ -13,7 +13,14 @@
 	
 	<link rel="stylesheet" type="text/css" href="<c:url value='resources/css/body.css'/>" />
 	<div class="wrap">
-		<p>메인 페이지입니다.</p>
+		<c:choose>
+			<c:when test="${userId != null}">
+				<p>${userId }님 반갑습니다.</p>
+			</c:when>
+			<c:otherwise>
+				<p>메인 페이지입니다.</p>
+			</c:otherwise>
+		</c:choose>
 	</div>
 		
 		
