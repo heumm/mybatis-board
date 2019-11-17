@@ -24,7 +24,7 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="home">HOME</a>
+				<a href="/">HOME</a>
 			</li>
 			<li>
 				<a href="board">게시판</a>
@@ -33,7 +33,15 @@
 				<a href="memberinfo">회원 정보</a>
 			</li>
 			<li>
-				<a href="loginForm">로그인</a>
+			<c:choose>
+				<c:when test="${userId == null }">
+					<a href="loginForm">로그인</a>
+				</c:when>
+				<c:otherwise>
+					<a href="logout">로그아웃</a>
+				</c:otherwise>
+			</c:choose>
+				
 			</li>
 		</ul>
 	</nav>

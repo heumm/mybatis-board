@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<link rel="stylesheet" type="text/css" href="<c:url value='resources/css/header.css'/>" />
+	<link rel="stylesheet" type="text/css" href="resources/css/header.css" />
 	<div class="header-wrap">
 		<h1>header</h1>
 	</div>

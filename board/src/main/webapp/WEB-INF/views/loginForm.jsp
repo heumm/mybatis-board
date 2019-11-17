@@ -12,7 +12,7 @@
 	<jsp:include page="include/header.jsp"/>
 	<jsp:include page="include/nav.jsp"/>
 	
-	<link rel="stylesheet" type="text/css" href="<c:url value='resources/css/body.css'/>" />
+	<link rel="stylesheet" type="text/css" href="resources/css/body.css" />
 	<div class="wrap">
 		<h2>로그인 페이지입니다.</h2>
 		<div>
@@ -20,8 +20,9 @@
 				<input type="text" name="id" placeholder="아이디"><br>
 				<input type="password" name="pw" placeholder="비밀번호"><br>
 				<input type="submit" value="로그인">
-			
+				
 			</form>
+			<a href="signForm">회원가입</a>
 		</div>
 	</div>
 		

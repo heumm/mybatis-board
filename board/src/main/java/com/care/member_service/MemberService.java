@@ -6,4 +6,6 @@ import org.springframework.ui.Model;
 
 public interface MemberService {
 	public void login(Model model);
+
+	public void insertMember(Model model);
 }

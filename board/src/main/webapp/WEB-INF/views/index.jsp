@@ -11,7 +11,7 @@
 	<jsp:include page="include/header.jsp"/>
 	<jsp:include page="include/nav.jsp"/>
 	
-	<link rel="stylesheet" type="text/css" href="<c:url value='resources/css/body.css'/>" />
+	<link rel="stylesheet" type="text/css" href="resources/css/body.css" />
 	<div class="wrap">
 		<c:choose>
 			<c:when test="${userId != null}">

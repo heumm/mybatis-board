@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<link rel="stylesheet" type="text/css" href="<c:url value='resources/css/footer.css'/>" />
+<link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
 <hr>
 	<div class="footer-wrap">
 		<h1>footer</h1>

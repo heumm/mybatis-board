@@ -26,8 +26,18 @@ public class MemberServiceImpl implements MemberService {
 		String pw = request.getParameter("pw");
 		MemberDTO dto = dao.login(id);
 		if(dto.getId().equals(id) && dto.getPw().equals(pw)) {
-			request.getSession().setAttribute("userID", dto.getId());
+			request.getSession().setAttribute("userId", dto.getId());
 		}
+	}
+
+	@Override
+	public void insertMember(Model model) {
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest)map.get("request");
+		MemberDTO dto = new MemberDTO();
+		dto.setId(request.getParameter("id"));
+		dto.setPw(request.getParameter("pw"));
+		dao.insertMember(dto);
 	}
 	
 }
