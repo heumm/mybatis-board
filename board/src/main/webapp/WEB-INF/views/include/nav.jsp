@@ -24,7 +24,7 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="/">HOME</a>
+				<a href="/controller">HOME</a>
 			</li>
 			<li>
 				<a href="board">게시판</a>

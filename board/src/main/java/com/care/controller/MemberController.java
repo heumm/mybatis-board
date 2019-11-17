@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.care.member_service.MemberService;
 
@@ -17,19 +18,17 @@ public class MemberController {
 	MemberService service;
 	
 	
-	
 	@RequestMapping("loginForm")
 	public String loginForm() {
-		
 		return "loginForm";
 	}
 	
 	@RequestMapping("login")
-	public String login(HttpServletRequest request, Model model) {
-		model.addAttribute("request", request);
+	public ModelAndView login(HttpServletRequest request) {
+		ModelAndView model = new ModelAndView();
+		model.addObject("request", request);
 		service.login(model);
-		
-		return "redirect:/";
+		return model;
 	}
 	
 	@RequestMapping("logout")
@@ -47,8 +46,6 @@ public class MemberController {
 	public String signUp(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
 		service.insertMember(model);
-		
-		
 		return "index";
 	}
 }

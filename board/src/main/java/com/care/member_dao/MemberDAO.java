@@ -13,7 +13,6 @@ public class MemberDAO {
 	SqlSession sqlSession;
 	
 	public MemberDTO selectMember(String id) {
-		
 		return sqlSession.selectOne("member.selectMember", id);
 	}
 
