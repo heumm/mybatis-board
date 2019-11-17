@@ -49,6 +49,6 @@ public class MemberController {
 		service.insertMember(model);
 		
 		
-		return "";
+		return "index";
 	}
 }

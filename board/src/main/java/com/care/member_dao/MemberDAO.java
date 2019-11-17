@@ -12,9 +12,9 @@ public class MemberDAO {
 	@Autowired
 	SqlSession sqlSession;
 	
-	public MemberDTO login(String id) {
+	public MemberDTO selectMember(String id) {
 		
-		return sqlSession.selectOne("member.login", id);
+		return sqlSession.selectOne("member.selectMember", id);
 	}
 
 	public void insertMember(MemberDTO dto) {

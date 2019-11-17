@@ -24,7 +24,8 @@ public class MemberServiceImpl implements MemberService {
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		MemberDTO dto = dao.login(id);
+		MemberDTO dto = dao.selectMember(id);
+		//아이디가 없는 경우 500에러발생
 		if(dto.getId().equals(id) && dto.getPw().equals(pw)) {
 			request.getSession().setAttribute("userId", dto.getId());
 		}
@@ -37,6 +38,7 @@ public class MemberServiceImpl implements MemberService {
 		MemberDTO dto = new MemberDTO();
 		dto.setId(request.getParameter("id"));
 		dto.setPw(request.getParameter("pw"));
+		//예외 처리 필요
 		dao.insertMember(dto);
 	}
 	
