@@ -16,11 +16,11 @@
 
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         id="dataSource">
-        <property value="oracle.jdbc.driver.OracleDriver" name="driverClassName" />
-        <property value="jdbc:oracle:thin:@192.168.26.129:1521:xe"
+        <property value="com.mysql.cj.jdbc.Driver" name="driverClassName" />
+        <property value="jdbc:mysql://localhost:3307/crawler?serverTimezone=Asia/Seoul"
             name="url" />
             
-        <property value="jsp" name="username" /><!-- DB User -->
+        <property value="hanheum" name="username" /><!-- DB User -->
         <property value="1234" name="password" /><!-- DB User Password -->
         
     </bean>

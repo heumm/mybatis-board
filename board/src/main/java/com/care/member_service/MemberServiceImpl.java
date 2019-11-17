@@ -25,10 +25,8 @@ public class MemberServiceImpl implements MemberService {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		MemberDTO dto = dao.login(id);
-		System.out.println(dto);
 		if(dto.getId().equals(id) && dto.getPw().equals(pw)) {
 			request.getSession().setAttribute("userID", dto.getId());
-			System.out.println(request.getSession().getAttribute("userId"));
 		}
 	}
 	
