@@ -6,7 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 
 public interface MemberService {
+	
 	public void login(ModelAndView model);
 
-	public void insertMember(Model model);
+	public void signMember(ModelAndView model);
 }

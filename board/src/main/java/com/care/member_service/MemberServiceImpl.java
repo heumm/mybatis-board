@@ -31,23 +31,28 @@ public class MemberServiceImpl implements MemberService {
 				request.getSession().setAttribute("userId", dto.getId());
 				model.setViewName("index");
 			} else {
-				model.addObject("loginErr", "비밀번호가 틀렸습니다.");
-				model.setViewName("loginErr");
+				model.addObject("pwErr", "비밀번호가 틀렸습니다.");
+				model.setViewName("member/loginForm");
 			}
 		} else {
-			model.addObject("loginErr", "아이디가 존재하지 않습니다.");
-			model.setViewName("loginErr");
+			model.addObject("idErr", "아이디가 존재하지 않습니다.");
+			model.setViewName("member/loginForm");
 		}
 		
 	}
 
 	@Override
-	public void insertMember(Model model) {
-		Map<String, Object> map = model.asMap();
+	public void signMember(ModelAndView model) {
+		Map<String, Object> map = model.getModel();
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		MemberDTO dto = new MemberDTO(request.getParameter("id"), request.getParameter("pw"));
-		//���� ó�� �ʿ�
-		dao.insertMember(dto);
+		//아이디 중복체크 필요
+		if(dao.selectMember(dto.getId()) == null) {
+			dao.insertMember(dto);
+			model.setViewName("index");
+		} else {
+			model.setViewName("member/signErr");
+		}
 	}
 	
 }

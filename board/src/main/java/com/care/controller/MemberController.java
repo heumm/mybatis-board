@@ -20,7 +20,7 @@ public class MemberController {
 	
 	@RequestMapping("loginForm")
 	public String loginForm() {
-		return "loginForm";
+		return "member/loginForm";
 	}
 	
 	@RequestMapping("login")
@@ -39,13 +39,14 @@ public class MemberController {
 	
 	@RequestMapping("signForm")
 	public String signForm() {
-		return "signForm";
+		return "member/signForm";
 	}
 	
 	@RequestMapping("signUp")
-	public String signUp(HttpServletRequest request, Model model) {
-		model.addAttribute("request", request);
-		service.insertMember(model);
-		return "index";
+	public ModelAndView signUp(HttpServletRequest request) {
+		ModelAndView model = new ModelAndView();
+		model.addObject("request", request);
+		service.signMember(model);
+		return model;
 	}
 }

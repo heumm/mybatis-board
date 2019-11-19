@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="include/header.jsp"/>
-	<jsp:include page="include/nav.jsp"/>
+	<jsp:include page="/WEB-INF/views/include/header.jsp"/>
+	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
 	
 	<link rel="stylesheet" type="text/css" href="resources/css/body.css" />
 	<div class="wrap">
@@ -26,7 +26,7 @@
 	</div>
 	
 	
-	<jsp:include page="include/footer.jsp"/>
+	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>
 
 
 </body>
