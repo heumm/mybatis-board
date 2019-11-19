@@ -68,6 +68,7 @@ public class MemberServiceImpl implements MemberService {
 		HttpServletRequest request = (HttpServletRequest)model.asMap().get("request");
 		String id = request.getParameter("id");
 		dao.deleteMember(id);
+		request.getSession().removeAttribute("userId");
 	}
 	
 

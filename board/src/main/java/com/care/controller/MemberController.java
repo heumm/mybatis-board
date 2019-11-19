@@ -60,6 +60,6 @@ public class MemberController {
 	public String deleteMember(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
 		service.deleteMember(model);
-		return "member/index";
+		return "index";
 	}
 }

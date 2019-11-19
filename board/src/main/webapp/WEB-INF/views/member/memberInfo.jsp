@@ -23,7 +23,7 @@
 					<c:choose>
 						<c:when test="${userId == dto.id}">
 							<tr>
-								<td>${dto.id}</td><td>${dto.pw}</td><td><a href="leave?id=${dto.id}">회원 탈퇴</a></td>
+								<td>${dto.id}</td><td>${dto.pw}</td><td><a href="leave?id=${dto.id}" onclick="return confirm('정말로 탈퇴하시겠습니까?');">회원 탈퇴</a></td>
 							</tr>
 						</c:when>
 						<c:otherwise>
