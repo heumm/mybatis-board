@@ -56,7 +56,7 @@ public class MemberController {
 		return "member/memberInfo";
 	}
 	
-	@RequestMapping("leave")
+	@RequestMapping(value="leave" )
 	public String deleteMember(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
 		service.deleteMember(model);
