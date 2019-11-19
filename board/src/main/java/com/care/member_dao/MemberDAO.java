@@ -1,5 +1,6 @@
 package com.care.member_dao;
 
+import java.util.*;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,6 +20,14 @@ public class MemberDAO {
 	public void insertMember(MemberDTO dto) {
 		
 		sqlSession.insert("member.insertMember", dto);
+	}
+	
+	public List<MemberDTO> listMember() {
+		return sqlSession.selectList("member.listMember");
+	}
+
+	public void deleteMember(String id) {
+		sqlSession.delete("member.deleteMember", id);
 	}
 	
 }

@@ -49,4 +49,17 @@ public class MemberController {
 		service.signMember(model);
 		return model;
 	}
+	
+	@RequestMapping("memberInfo")
+	public String memberInfo(Model model) {
+		service.listMember(model);
+		return "member/memberInfo";
+	}
+	
+	@RequestMapping("leave")
+	public String deleteMember(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		service.deleteMember(model);
+		return "member/index";
+	}
 }

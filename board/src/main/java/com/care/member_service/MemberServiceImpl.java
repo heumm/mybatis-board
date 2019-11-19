@@ -1,6 +1,6 @@
 package com.care.member_service;
 
-import java.util.Map;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -56,5 +56,20 @@ public class MemberServiceImpl implements MemberService {
 			model.setViewName("member/signForm");
 		}
 	}
+
+	@Override
+	public void listMember(Model model) {
+		List<MemberDTO> list = dao.listMember();
+		model.addAttribute("list", list);
+	}
+
+	@Override
+	public void deleteMember(Model model) {
+		HttpServletRequest request = (HttpServletRequest)model.asMap().get("request");
+		String id = request.getParameter("id");
+		dao.deleteMember(id);
+	}
 	
+
+
 }

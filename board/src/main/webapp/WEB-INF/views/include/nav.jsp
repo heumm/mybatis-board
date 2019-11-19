@@ -30,7 +30,7 @@
 				<a href="board">게시판</a>
 			</li>
 			<li>
-				<a href="memberinfo">회원 정보</a>
+				<a href="memberInfo">회원 정보</a>
 			</li>
 			<li>
 			<c:choose>

@@ -10,4 +10,9 @@ public interface MemberService {
 	public void login(ModelAndView model);
 
 	public void signMember(ModelAndView model);
+
+	public void listMember(Model model);
+
+	public void deleteMember(Model model);
+
 }
