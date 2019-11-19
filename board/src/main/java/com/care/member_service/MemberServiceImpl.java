@@ -26,17 +26,16 @@ public class MemberServiceImpl implements MemberService {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		MemberDTO dto = dao.selectMember(id);
-		//¾ÆÀÌµğ°¡ ¾ø°Å³ª ÀÔ·ÂÇÏÁö ¾ÊÀº °æ¿ì dto °¡ null·Î ¹İÈ¯µÈ´Ù
-		if(dto != null) {	//ÇØ´ç ¾ÆÀÌµğ°¡ Á¸ÀçÇÑ´Ù´Â ¶æ
-			if(dto.getPw().equals(pw)) {	//·Î±×ÀÎ ¼º°ø
+		if(dto != null) {	
+			if(dto.getPw().equals(pw)) {	
 				request.getSession().setAttribute("userId", dto.getId());
 				model.setViewName("index");
 			} else {
-				model.addObject("loginErr", "ºñ¹Ğ¹øÈ£°¡ Æ²·È½À´Ï´Ù.");
+				model.addObject("loginErr", "ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.");
 				model.setViewName("loginErr");
 			}
 		} else {
-			model.addObject("loginErr", "¾ÆÀÌµğ°¡ ¾ø½À´Ï´Ù.");
+			model.addObject("loginErr", "ì•„ì´ë””ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			model.setViewName("loginErr");
 		}
 		
@@ -47,7 +46,7 @@ public class MemberServiceImpl implements MemberService {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		MemberDTO dto = new MemberDTO(request.getParameter("id"), request.getParameter("pw"));
-		//¿¹¿Ü Ã³¸® ÇÊ¿ä
+		//ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Ê¿ï¿½
 		dao.insertMember(dto);
 	}
 	
