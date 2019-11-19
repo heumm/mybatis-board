@@ -49,9 +49,11 @@ public class MemberServiceImpl implements MemberService {
 		//아이디 중복체크 필요
 		if(dao.selectMember(dto.getId()) == null) {
 			dao.insertMember(dto);
+			model.addObject("signed", "회원가입에 성공하였습니다!");
 			model.setViewName("index");
 		} else {
-			model.setViewName("member/signErr");
+			model.addObject("idDuplicate", "중복된 아이디입니다.");
+			model.setViewName("member/signForm");
 		}
 	}
 	

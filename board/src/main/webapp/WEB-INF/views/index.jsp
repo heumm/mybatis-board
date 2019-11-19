@@ -8,6 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<c:if test="${signed != null}">
+		<script>
+			alert('${signed}');
+			location.href="/controller"
+		</script>
+	</c:if>
+
 	<jsp:include page="include/header.jsp"/>
 	<jsp:include page="include/nav.jsp"/>
 	
