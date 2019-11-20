@@ -1,4 +1,4 @@
-package com.care.member_dto;
+package com.care.member.dto;
 
 public class MemberDTO {
 	private String id;

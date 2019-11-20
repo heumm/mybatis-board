@@ -14,7 +14,6 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 	<!-- JDBC MySQL -->
-	<!-- 
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         id="dataSource">
         <property value="com.mysql.cj.jdbc.Driver" name="driverClassName" />
@@ -22,16 +21,17 @@
         <property value="hanheum" name="username" />
         <property value="1234" name="password" />
     </bean>
-     -->
     <!-- JDBC Oracle -->
+    <!-- 
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         id="dataSource">
         <property value="oracle.jdbc.driver.OracleDriver" name="driverClassName" />
         <property value="jdbc:oracle:thin:@192.168.100.129:1521:xe"
             name="url" />
-        <property value="jsp" name="username" /><!-- DB User -->
-        <property value="1234" name="password" /><!-- DB User Password -->
+        <property value="jsp" name="username" />
+        <property value="1234" name="password" />
     </bean>
+     -->
  
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="SqlSessionFactory">
         <property name="dataSource" ref="dataSource" />

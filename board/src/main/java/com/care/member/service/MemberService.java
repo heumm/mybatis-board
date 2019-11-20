@@ -1,4 +1,4 @@
-package com.care.member_service;
+package com.care.member.service;
 
 import javax.servlet.http.HttpSession;
 

@@ -1,4 +1,4 @@
-package com.care.member_service;
+package com.care.member.service;
 
 import java.util.*;
 
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.care.member_dao.MemberDAO;
-import com.care.member_dto.MemberDTO;
+import com.care.member.dao.MemberDAO;
+import com.care.member.dto.MemberDTO;
 
 @Service
 public class MemberServiceImpl implements MemberService {
