@@ -1,5 +1,7 @@
 package com.care.board.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,8 +22,15 @@ public class BoardController {
 		return "board/board";
 	}
 	
+	@RequestMapping("writeForm")
+	public String writeForm() {
+		return "board/writeForm";
+	}
+	
 	@RequestMapping("write")
-	public String write(Model model) {
-		return "";
+	public String write(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		service.write(model);
+		return "redirect:board";
 	}
 }

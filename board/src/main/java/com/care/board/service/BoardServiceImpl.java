@@ -1,6 +1,8 @@
 package com.care.board.service;
 
-import java.util.List;
+import java.util.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +19,15 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public void boardList(Model model) {
-		List<BoardDTO> list = dao.boardList();
-		model.addAttribute("articles", list);
+		model.addAttribute("articles", dao.boardList());
+	}
+
+	@Override
+	public void write(Model model) {
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest)map.get("request");
+		BoardDTO dto = new BoardDTO(request.getParameter("title"), request.getParameter("content"), request.getParameter("writerId"));
+		dao.insertArticle(dto);
 	}
 
 }

@@ -1,16 +1,29 @@
 package com.care.board.dto;
 
+import java.text.Format;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BoardDTO {
 	private int boardNum;
 	private String title;
+	private String content;
 	private String writerId;
-	private Date regDate;
+	private String regDate;
 	private int viewCount;
 	private int recommend;
 	private int unrecommend;
 	
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+	
+	public BoardDTO() {}
+	
+	public BoardDTO(String title, String content, String writerId) {
+		this.title = title;
+		this.content = content;
+		this.writerId = writerId;
+	}
 	
 	public int getBoardNum() {
 		return boardNum;
@@ -24,17 +37,28 @@ public class BoardDTO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 	public String getWriterId() {
 		return writerId;
 	}
 	public void setWriterId(String writerId) {
 		this.writerId = writerId;
 	}
-	public Date getRegDate() {
+	public String getRegDate() {
+		format.applyPattern(regDate);
 		return regDate;
 	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setRegDate(String regDate) {
+		try {
+			this.regDate = format.format(format.parse(regDate));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 	}
 	public int getViewCount() {
 		return viewCount;
@@ -55,10 +79,13 @@ public class BoardDTO {
 	public void setUnrecommend(int unrecommend) {
 		this.unrecommend = unrecommend;
 	}
+
 	@Override
 	public String toString() {
-		return "BoardDTO [boardNum=" + boardNum + ", title=" + title + ", writerId=" + writerId + ", regDate=" + regDate
-				+ ", viewCount=" + viewCount + ", recommend=" + recommend + ", unrecommend=" + unrecommend + "]";
+		return "BoardDTO [boardNum=" + boardNum + ", title=" + title + ", content=" + content + ", writerId=" + writerId
+				+ ", regDate=" + regDate + ", viewCount=" + viewCount + ", recommend=" + recommend + ", unrecommend="
+				+ unrecommend + "]";
 	}
+	
 	
 }

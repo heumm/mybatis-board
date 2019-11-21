@@ -5,5 +5,9 @@
 	<select id="articles" resultType="com.care.board.dto.BoardDTO">
 		select * from board
 	</select>
+	
+	<insert id="insertArticle" parameterType="com.care.board.dto.BoardDTO">
+		insert into board(title, content, writer_id) values(#{title}, #{content}, #{writerId})
+	</insert>
 
 </mapper>

@@ -19,4 +19,9 @@ public class BoardDAO {
 		return sqlSession.selectList("board.articles");
 	}
 
+
+	public void insertArticle(BoardDTO dto) {
+		sqlSession.insert("board.insertArticle", dto);
+	}
+
 }

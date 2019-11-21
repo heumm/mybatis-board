@@ -34,7 +34,7 @@
 				</c:otherwise>
 			</c:choose>
 		</table>
-		<input type="button" value="글작성" onclick="location.href='write'">
+		<input type="button" value="글작성" onclick="location.href='writeForm'">
 	</div>
 		
 		
