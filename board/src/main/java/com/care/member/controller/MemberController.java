@@ -15,7 +15,7 @@ import com.care.member.service.MemberService;
 public class MemberController {
 	
 	@Autowired
-	MemberService service;
+	private MemberService service;
 	
 	
 	@RequestMapping("loginForm")
@@ -56,7 +56,7 @@ public class MemberController {
 		return "member/memberInfo";
 	}
 	
-	@RequestMapping(value="leave" )
+	@RequestMapping("leave")
 	public String deleteMember(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
 		service.deleteMember(model);

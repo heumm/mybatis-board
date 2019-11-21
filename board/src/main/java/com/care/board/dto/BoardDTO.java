@@ -51,9 +51,14 @@ public class BoardDTO {
 	public int getUnrecommend() {
 		return unrecommend;
 	}
+	
 	public void setUnrecommend(int unrecommend) {
 		this.unrecommend = unrecommend;
 	}
-	
+	@Override
+	public String toString() {
+		return "BoardDTO [boardNum=" + boardNum + ", title=" + title + ", writerId=" + writerId + ", regDate=" + regDate
+				+ ", viewCount=" + viewCount + ", recommend=" + recommend + ", unrecommend=" + unrecommend + "]";
+	}
 	
 }

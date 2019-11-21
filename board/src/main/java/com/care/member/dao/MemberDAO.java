@@ -11,7 +11,7 @@ import com.care.member.dto.MemberDTO;
 public class MemberDAO {
 	
 	@Autowired
-	SqlSession sqlSession;
+	private SqlSession sqlSession;
 	
 	public MemberDTO selectMember(String id) {
 		return sqlSession.selectOne("member.selectMember", id);

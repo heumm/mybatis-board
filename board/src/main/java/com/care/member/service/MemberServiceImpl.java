@@ -17,7 +17,7 @@ import com.care.member.dto.MemberDTO;
 public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
-	MemberDAO dao;
+	private MemberDAO dao;
 	
 	@Override
 	public void login(ModelAndView model) {

@@ -17,7 +17,7 @@
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
         id="dataSource">
         <property value="com.mysql.cj.jdbc.Driver" name="driverClassName" />
-        <property value="jdbc:mysql://localhost:3307/crawler?serverTimezone=Asia/Seoul" name="url" />
+        <property value="jdbc:mysql://localhost:3306/spring?serverTimezone=Asia/Seoul" name="url" />
         <property value="hanheum" name="username" />
         <property value="1234" name="password" />
     </bean>
