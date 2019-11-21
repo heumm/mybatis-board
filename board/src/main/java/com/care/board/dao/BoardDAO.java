@@ -24,4 +24,9 @@ public class BoardDAO {
 		sqlSession.insert("board.insertArticle", dto);
 	}
 
+
+	public BoardDTO selectArticle(String boardNum) {
+		return sqlSession.selectOne("board.selectArticle", boardNum);
+	}
+
 }

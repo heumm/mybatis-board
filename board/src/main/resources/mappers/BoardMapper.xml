@@ -9,5 +9,9 @@
 	<insert id="insertArticle" parameterType="com.care.board.dto.BoardDTO">
 		insert into board(title, content, writer_id) values(#{title}, #{content}, #{writerId})
 	</insert>
-
+	
+	<select id="selectArticle" parameterType="String" resultType="com.care.board.dto.BoardDTO">
+		select * from board where board_num=#{boardNum}
+	</select>
+	
 </mapper>

@@ -30,4 +30,11 @@ public class BoardServiceImpl implements BoardService {
 		dao.insertArticle(dto);
 	}
 
+	@Override
+	public void getArticle(Model model) {
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest)map.get("request");
+		model.addAttribute("article", dao.selectArticle(request.getParameter("num")));
+	}
+
 }

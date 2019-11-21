@@ -7,5 +7,7 @@ public interface BoardService {
 	public void boardList(Model model);
 
 	public void write(Model model);
+
+	public void getArticle(Model model);
 	
 }

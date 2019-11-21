@@ -33,4 +33,11 @@ public class BoardController {
 		service.write(model);
 		return "redirect:board";
 	}
+	
+	@RequestMapping("article")
+	public String getArticle(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		service.getArticle(model);
+		return "board/article";
+	}
 }

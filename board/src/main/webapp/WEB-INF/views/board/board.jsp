@@ -22,7 +22,7 @@
 				<c:when test="${!empty articles}">
 					<c:forEach var="article" items="${articles}">
 						<tr>
-							<td>${article.boardNum}</td><td>${article.title}</td><td>${article.writerId}</td>
+							<td>${article.boardNum}</td><td><a href="article?num=${article.boardNum}">${article.title}</a></td><td>${article.writerId}</td>
 							<td>${article.regDate}</td><td>${article.viewCount}</td><td>${article.recommend}</td><td>${article.unrecommend}</td>
 						</tr>
 					</c:forEach>
