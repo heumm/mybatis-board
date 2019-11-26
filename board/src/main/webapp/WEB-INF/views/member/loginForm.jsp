@@ -1,33 +1,104 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+
+<!-- 
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 -->
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link href="resources/css/body.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/include/header.jsp"/>
-	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
-	
-	<link rel="stylesheet" type="text/css" href="resources/css/body.css" />
+	<jsp:include page="/WEB-INF/views/include/header.jsp" />
 	<div class="wrap">
-		<h2>로그인 페이지입니다.</h2>
-		<p>${idErr}${pwErr}</p>
-		<div>
-			<form method="post" action="login">
-				<input type="text" name="id" placeholder="아이디"><br>
-				<input type="password" name="pw" placeholder="비밀번호"><br>
-				<input type="submit" value="로그인">
-				
-			</form>
-			<a href="signForm">회원가입</a>
+		<div class="container">
+			<div class="d-flex justify-content-center h-100">
+				<div class="card">
+					<div class="card-header">
+						<h3>Sign In</h3>
+						<div class="d-flex justify-content-end social_icon">
+							<span><i class="fab fa-facebook-square"></i></span> <span><i
+								class="fab fa-google-plus-square"></i></span> <span><i
+								class="fab fa-twitter-square"></i></span>
+						</div>
+					</div>
+					<div class="card-body">
+						<form method="post" action="login">
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-user"></i></span>
+								</div>
+								<input type="text" class="form-control" placeholder="id"
+									name="id">
+
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-key"></i></span>
+								</div>
+								<input type="password" class="form-control"
+									placeholder="password" name="pw">
+							</div>
+							<div class="row align-items-center remember">
+								<input type="checkbox">Remember Me
+							</div>
+							<div class="form-group">
+								<input type="submit" value="Login"
+									class="btn float-right login_btn">
+							</div>
+						</form>
+					</div>
+					<div class="card-footer">
+						<div class="d-flex justify-content-center links">
+							Don't have an account?<a href="signForm">Sign Up</a>
+						</div>
+						<div class="d-flex justify-content-center">
+							<a href="#">Forgot your password?</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
 		</div>
 	</div>
-		
-		
-	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>
-	
+	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+
+	<!-- Alert -->
+	<c:if test="${idErr != null}">
+		<div
+			class="alert alert-danger alert-dismissable show fade fixed-bottom"
+			role="alert">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">×</span>
+			</button>
+			<strong>Warning!</strong> ${idErr }
+		</div>
+	</c:if>
+	<c:if test="${pwErr != null}">
+		<div
+			class="alert alert-danger alert-dismissable show fade fixed-bottom"
+			role="alert">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">×</span>
+			</button>
+			<strong>Warning!</strong> ${pwErr }
+		</div>
+	</c:if>
+
 </body>
 </html>

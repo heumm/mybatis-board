@@ -3,48 +3,36 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-	ul {
-		list-style-type: none;
-		display: flex;
-		justify-content: flex-end;
-	}
-	ul li {
-		margin-right: 20px; 
-		flex-flow: row;
-		
-	}
-</style>
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
 </head>
 <body>
-<hr>
-	<nav>
-		<ul>
-			<li>
-				<a href="/controller">HOME</a>
-			</li>
-			<li>
-				<a href="board">게시판</a>
-			</li>
-			<li>
-				<a href="memberInfo">회원 정보</a>
-			</li>
-			<li>
-			<c:choose>
+<nav class="navbar navbar-expand-md navbar-light bg-light navbar-expand-md">
+        <a class="navbar-brand" href="/controller">Home</a>
+        <ul class="navbar-nav w-100">
+            <li class="nav-item"><a href="board" class="nav-link">게시판</a></li>
+            <li class="nav-item"><a href="memberInfo" class="nav-link">회원 정보</a></li>
+            <c:choose>
 				<c:when test="${userId == null }">
-					<a href="loginForm">로그인</a>
+					<li class="nav-item"><a href="loginForm" class="nav-link">로그인</a></li>
 				</c:when>
 				<c:otherwise>
-					<a href="logout">로그아웃</a>
+					<li class="nav-item"><a href="logout" class="nav-link">로그인</a></li>
 				</c:otherwise>
 			</c:choose>
-				
-			</li>
-		</ul>
-	</nav>
-<hr>
+            <li class="nav-item ml-md-auto"><a href="https://themestr.app/" class="nav-link">Themestr.app</a></li>
+        </ul>
+</nav>
 </body>
 </html>

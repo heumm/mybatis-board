@@ -9,3 +9,7 @@ h1 {
 	height: 150px;
 	justify-content: center; 
 }
+
+body {
+	height: 100%;
+}

@@ -14,9 +14,8 @@
 			location.href="/controller"
 		</script>
 	</c:if>
-
 	<jsp:include page="/WEB-INF/views/include/header.jsp"/>
-	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
+	
 	
 	<link rel="stylesheet" type="text/css" href="resources/css/body.css" />
 	<div class="wrap">

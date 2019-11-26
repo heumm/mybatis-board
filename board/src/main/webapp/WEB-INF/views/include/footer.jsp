@@ -9,8 +9,7 @@
 </head>
 <body>
 
-<link rel="stylesheet" type="text/css" href="resources/css/footer.css" />
-<hr>
+<link rel="stylesheet" type="text/css" href="resources/css/footer.css" /> 
 	<div class="footer-wrap">
 		<h1>footer</h1>
 	</div>

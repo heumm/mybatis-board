@@ -32,11 +32,11 @@ public class MemberServiceImpl implements MemberService {
 				model.setViewName("index");
 			} else {
 				model.addObject("pwErr", "비밀번호가 틀렸습니다.");
-				model.setViewName("member/loginForm");
+				model.setViewName("forward:loginForm");
 			}
 		} else {
 			model.addObject("idErr", "아이디가 존재하지 않습니다.");
-			model.setViewName("member/loginForm");
+			model.setViewName("forward:loginForm");
 		}
 		
 	}
