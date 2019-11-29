@@ -20,9 +20,10 @@
 
 	<!--Custom styles-->
 	<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/header.css" />
 </head>
 <body>
-	<link rel="stylesheet" type="text/css" href="resources/css/header.css" />
+	
 	<nav
 		class="navbar navbar-expand-md navbar-light bg-light navbar-expand-md">
 		<a class="navbar-brand" href="/controller">Home</a>
