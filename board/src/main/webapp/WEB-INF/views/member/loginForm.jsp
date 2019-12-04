@@ -8,20 +8,21 @@
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
+
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+			 -->
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	 -->
+
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link href="resources/css/body.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/include/header.jsp" />
+	<jsp:include page="/WEB-INF/views/include/nav.jsp" />
 	<div class="wrap">
 		<div class="container">
 			<div class="d-flex justify-content-center h-100">
@@ -79,24 +80,24 @@
 	<!-- Alert -->
 	<c:if test="${idErr != null}">
 		<div
-			class="alert alert-danger alert-dismissable show fade fixed-bottom"
+			class="alert alert-warning alert-dismissable show fade fixed-bottom"
 			role="alert">
 			<button type="button" class="close" data-dismiss="alert"
 				aria-label="Close">
 				<span aria-hidden="true">×</span>
 			</button>
-			<strong>Warning!</strong> ${idErr }
+			<strong>${idErr }</strong> 
 		</div>
 	</c:if>
 	<c:if test="${pwErr != null}">
 		<div
-			class="alert alert-danger alert-dismissable show fade fixed-bottom"
+			class="alert alert-warning alert-dismissable show fade fixed-bottom"
 			role="alert">
 			<button type="button" class="close" data-dismiss="alert"
 				aria-label="Close">
 				<span aria-hidden="true">×</span>
 			</button>
-			<strong>Warning!</strong> ${pwErr }
+			<strong>${pwErr }</strong> 
 		</div>
 	</c:if>
 

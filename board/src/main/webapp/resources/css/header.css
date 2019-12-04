@@ -13,3 +13,19 @@ h1 {
 body {
 	height: 100%;
 }
+
+.wrap {
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+}
+.wrap>* {
+	align-self: center;
+}
+
+.footer-wrap {
+	display: flex;
+	height: 100px;
+	justify-content: center;			
+}

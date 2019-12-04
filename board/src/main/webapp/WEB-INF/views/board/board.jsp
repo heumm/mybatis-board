@@ -8,10 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/include/header.jsp"/>
+<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
 	
 	
-	<link rel="stylesheet" type="text/css" href="resources/css/body.css" />
 	<div class="wrap">
 		<table border="1px">
 			<tr>

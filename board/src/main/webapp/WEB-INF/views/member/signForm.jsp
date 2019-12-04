@@ -8,10 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/include/header.jsp"/>
-	
-	
-	<link rel="stylesheet" type="text/css" href="resources/css/body.css" />
+	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
 	<div class="wrap">
 		<h2>회원가입 페이지입니다.</h2>
 		<p>${idDuplicate}</p>

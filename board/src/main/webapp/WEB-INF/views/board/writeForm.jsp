@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/include/header.jsp"/>
+	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
 	
 	
-	<link rel="stylesheet" type="text/css" href="resources/css/body.css" />
 	<div class="wrap">
 		<form method="post" action="write">
 			<p>제목 : </p><input type="text" name="title" size="70"><br>

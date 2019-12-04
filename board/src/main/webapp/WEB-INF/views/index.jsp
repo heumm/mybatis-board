@@ -14,10 +14,11 @@
 			location.href="/controller"
 		</script>
 	</c:if>
+	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>	
 	<jsp:include page="/WEB-INF/views/include/header.jsp"/>
+
 	
 	
-	<link rel="stylesheet" type="text/css" href="resources/css/body.css" />
 	<div class="wrap">
 		<c:choose>
 			<c:when test="${userId != null}">
