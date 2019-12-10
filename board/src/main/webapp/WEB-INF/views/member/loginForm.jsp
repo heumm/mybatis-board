@@ -19,21 +19,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/include/nav.jsp" />
-	<div class="wrap">
-		<div class="container">
-			<div class="d-flex justify-content-center h-100">
+		<div class="container-fluid h-100">
+			<div class="d-flex justify-content-center">
 				<div class="card">
 					<div class="card-header">
 						<h3>Sign In</h3>
-						<div class="d-flex justify-content-end social_icon">
-							<span><i class="fab fa-facebook-square"></i></span> <span><i
-								class="fab fa-google-plus-square"></i></span> <span><i
-								class="fab fa-twitter-square"></i></span>
-						</div>
 					</div>
 					<div class="card-body">
 						<form method="post" action="login">
@@ -71,33 +64,28 @@
 					</div>
 				</div>
 			</div>
-
-
 		</div>
-	</div>
-	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/include/footer.jsp" />	
 
 	<!-- Alert -->
 	<c:if test="${idErr != null}">
-		<div
-			class="alert alert-warning alert-dismissable show fade fixed-bottom"
+		<div id="loginAlert" class="mb-0 alert alert-warning alert-dismissable show fade fixed-bottom"
 			role="alert">
 			<button type="button" class="close" data-dismiss="alert"
 				aria-label="Close">
 				<span aria-hidden="true">×</span>
 			</button>
-			<strong>${idErr }</strong> 
+			${idErr } 
 		</div>
 	</c:if>
 	<c:if test="${pwErr != null}">
-		<div
-			class="alert alert-warning alert-dismissable show fade fixed-bottom"
+		<div id="loginAlert" class="mb-0 alert alert-warning alert-dismissable show fade fixed-bottom"
 			role="alert">
 			<button type="button" class="close" data-dismiss="alert"
 				aria-label="Close">
 				<span aria-hidden="true">×</span>
 			</button>
-			<strong>${pwErr }</strong> 
+			${pwErr }
 		</div>
 	</c:if>
 

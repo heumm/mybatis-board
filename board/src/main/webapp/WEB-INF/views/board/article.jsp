@@ -9,16 +9,14 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
+	<div class="container-fluid h-100">
 	
-	
-	<div class="wrap">
 		<p>제목 : ${article.title }</p>
 		<p>작성자 : ${article.writerId }</p>
 		<p>작성날짜 : ${article.regDate }</p>
 		<p>내용 : <br>${article.content }</p>
 		<input type="button" value="목록" onclick="location.href='board'">
 	</div>
-		
 		
 	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>
 </body>

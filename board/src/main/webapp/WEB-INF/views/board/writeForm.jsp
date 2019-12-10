@@ -9,8 +9,7 @@
 <body>
 	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
 	
-	
-	<div class="wrap">
+	<div class="container-fluid h-100">
 		<form method="post" action="write">
 			<p>제목 : </p><input type="text" name="title" size="70"><br>
 			<p>내용 : </p><textarea rows="10" cols="80" name="content"></textarea><br>
@@ -18,7 +17,6 @@
 			<input type="submit" value="글쓰기">
 		</form>
 	</div>
-		
 		
 	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>
 </body>

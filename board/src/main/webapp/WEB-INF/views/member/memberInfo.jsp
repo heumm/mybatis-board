@@ -12,8 +12,7 @@
 
 
 
-	<div class="wrap">
-		<div class="container">
+		<div class="container-fluid h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="row">
 				<h2>회원 정보</h2>
@@ -52,7 +51,6 @@
 			</div>
 			</div>
 		</div>
-	</div>
 
 
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />

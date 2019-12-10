@@ -9,9 +9,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/include/nav.jsp"/>
+	<div class="container-fluid h-100">
 	
-	
-	<div class="wrap">
 		<table border="1px">
 			<tr>
 				<th>글번호</th><th>제목</th><th>글쓴이</th><th>작성일</th><th>조회수</th><th>추천</th><th>비추천</th>
@@ -34,9 +33,8 @@
 			</c:choose>
 		</table>
 		<input type="button" value="글작성" onclick="location.href='writeForm'">
-	</div>
 		
-		
+	</div>	
 	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>
 </body>
 </html>
