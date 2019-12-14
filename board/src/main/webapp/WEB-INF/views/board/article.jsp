@@ -16,7 +16,13 @@
 		
 		<p>작성날짜 : ${article.regDate }</p>
 		<p>내용 : <br>${article.content }</p>
-		<input type="button" class="btn btn-secondary align-self-end" value="목록" onclick="location.href='board'">
+		<div class="d-flex justify-content-end">
+		<input type="button" class="btn btn-secondary mx-1" value="목록" onclick="location.href='board?page=${curPage}'">
+		<c:if test="${userId == article.writerId}">
+			<input type="button" class="btn btn-outline-dark mx-1" value="수정" onclick="location.href='#'">
+			<input type="button" class="btn btn-outline-danger mx-1" value="삭제" onclick="location.href='#'">
+		</c:if>
+		</div>
 		</div>
 		
 	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>

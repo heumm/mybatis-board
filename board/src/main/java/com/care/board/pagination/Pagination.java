@@ -150,7 +150,7 @@ public class Pagination {
 	}
 
 	public int getPrevPage() {
-		return prevPage;
+		return startPage - 1;
 	}
 
 	public void setPrevPage(int prevPage) {
@@ -158,7 +158,7 @@ public class Pagination {
 	}
 
 	public int getNextPage() {
-		return nextPage;
+		return endPage + 1;
 	}
 
 	public void setNextPage(int nextPage) {

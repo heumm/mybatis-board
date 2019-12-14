@@ -19,7 +19,7 @@ public class BoardController {
 	
 	@RequestMapping(value="board")
 	public String board(Model model, 
-			@RequestParam(value="curPage", required=false, defaultValue="1") int curPage,
+			@RequestParam(value="page", required=false, defaultValue="1") int curPage,
 			HttpServletRequest request) {
 		System.out.println("현재 페이지 : " + curPage);
 		model.addAttribute("curPage", curPage);

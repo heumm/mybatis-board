@@ -41,6 +41,7 @@ public class BoardServiceImpl implements BoardService {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		model.addAttribute("article", dao.selectArticle(request.getParameter("num")));
+		model.addAttribute("curPage", request.getParameter("page"));
 	}
 
 }
