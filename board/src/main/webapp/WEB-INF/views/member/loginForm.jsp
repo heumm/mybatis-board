@@ -21,10 +21,13 @@
 
 </head>
 <body>
+	<c:if test="${userId != null }">
+		<c:redirect url="/"/>
+	</c:if>
+
 	<jsp:include page="/WEB-INF/views/include/nav.jsp" />
-		<div class="container-fluid h-100">
-			<div class="d-flex justify-content-center">
-				<div class="card">
+		<div class="container-fluid h-100 d-flex justify-content-center">
+				<div class="card align-self-center" style="width:600px;height:500px">
 					<div class="card-header">
 						<h3>Sign In</h3>
 					</div>
@@ -45,7 +48,7 @@
 								<input type="password" class="form-control"
 									placeholder="password" name="pw">
 							</div>
-							<div class="row align-items-center remember">
+							<div class="row justify-content-center remember">
 								<input type="checkbox">Remember Me
 							</div>
 							<div class="form-group">
@@ -63,29 +66,30 @@
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />	
 
 	<!-- Alert -->
 	<c:if test="${idErr != null}">
-		<div id="loginAlert" class="mb-0 alert alert-warning alert-dismissable show fade fixed-bottom"
+		<div id="loginAlert" class="mb-0 alert alert-danger alert-dismissable show fade fixed-bottom"
 			role="alert">
 			<button type="button" class="close" data-dismiss="alert"
 				aria-label="Close">
 				<span aria-hidden="true">×</span>
 			</button>
-			${idErr } 
+			<i class="fa fa-exclamation-triangle"></i>
+			${idErr } 다시 확인해주세요.
 		</div>
 	</c:if>
 	<c:if test="${pwErr != null}">
-		<div id="loginAlert" class="mb-0 alert alert-warning alert-dismissable show fade fixed-bottom"
+		<div id="loginAlert" class="mb-0 alert alert-danger alert-dismissable show fade fixed-bottom"
 			role="alert">
 			<button type="button" class="close" data-dismiss="alert"
 				aria-label="Close">
 				<span aria-hidden="true">×</span>
 			</button>
-			${pwErr }
+			<i class="fa fa-exclamation-triangle">&nbsp;&nbsp;</i>
+			${pwErr } 다시 확인해주세요.
 		</div>
 	</c:if>
 

@@ -12,11 +12,9 @@
 
 
 
-		<div class="container-fluid h-100">
-		<div class="d-flex justify-content-center h-100">
-			<div class="row">
+			<div class="container container-custom align-self-center">
 				<h2>회원 정보</h2>
-				<table class="table">
+				<table class="table table-hover">
 					<thead class="thead-light">
 					<tr>
 						<th>아이디</th>
@@ -48,9 +46,7 @@
 					</c:forEach>
 					</tbody>
 				</table>
-			</div>
-			</div>
-		</div>
+				</div>
 
 
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />

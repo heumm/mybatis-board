@@ -9,13 +9,14 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/include/nav.jsp"/>
-	<div class="container-fluid h-100">
-	
-		<table border="1px">
+		<div class="container container-custom align-self-center flex-wrap">
+		<h2>게시판</h2>
+		<table class="table table-hover">
+			<thead class="thead-light">
 			<tr>
 				<th>글번호</th><th>제목</th><th>글쓴이</th><th>작성일</th><th>조회수</th><th>추천</th><th>비추천</th>
 			</tr>
-			
+			</thead>
 			<c:choose>
 				<c:when test="${!empty articles}">
 					<c:forEach var="article" items="${articles}">
@@ -32,9 +33,39 @@
 				</c:otherwise>
 			</c:choose>
 		</table>
-		<input type="button" value="글작성" onclick="location.href='writeForm'">
+		<div class="d-flex justify-content-end">
+			<input type="button" class="btn btn-secondary" value="글작성" onclick="location.href='writeForm'">
+		</div>
 		
-	</div>	
+		<div class="d-flex justify-content-center">
+		
+			<ul class="pagination">
+					
+				<c:choose>
+					<c:when test="${pagination.curRange == 1}">
+						<li class="page-item disabled"><a class="page-link" href="board?curPage=${pageNum}">이전</a></li>
+					</c:when>
+					<c:otherwise>
+						<li class="page-item"><a class="page-link" href="board?curPage=${--pageNum}">이전</a></li>
+					</c:otherwise>
+				</c:choose>
+				
+				<c:forEach var="pageNum" begin="${pagination.startPage}"
+					end="${pagination.endPage}">
+					<c:choose>
+						<c:when test="${pageNum == pagination.curPage}">
+							<li class="page-item active"><a class="page-link">${pageNum}</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="page-item"><a class="page-link" href="board?curPage=${pageNum}">${pageNum}</a></li>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+				
+				
+			</ul>
+			</div>
+		</div>
 	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>
 </body>
 </html>

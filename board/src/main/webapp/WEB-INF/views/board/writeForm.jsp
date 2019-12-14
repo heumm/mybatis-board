@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,16 +8,33 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
+	<c:if test="${userId == null}">
+		<script>
+			alert('로그인 후 이용 가능합니다.');
+			location.href="loginForm";
+		</script>
+	</c:if>
+
 	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
 	
-	<div class="container-fluid h-100">
+		<div class="container container-custom align-self-center">
+		<h2>글쓰기</h2>
 		<form method="post" action="write">
-			<p>제목 : </p><input type="text" name="title" size="70"><br>
-			<p>내용 : </p><textarea rows="10" cols="80" name="content"></textarea><br>
+		<table class="table">
+			<tr><th>제목 : </th><td>
+			<div class="input-group form-group">
+			<input type="text" class="form-control" name="title" size="70">
+			</div>
+			</td></tr>
+			<tr><th>내용 : </th><td><div class="input-group form-group"><textarea class="form-control" rows="10" name="content"></textarea></div></td></tr>
+		</table>
 			<input type="hidden" name="writerId" value="${userId}">
-			<input type="submit" value="글쓰기">
+			<div class="d-flex justify-content-end">
+			<input type="submit" class="btn btn-secondary" value="글쓰기">&nbsp;<button type="button" class="btn btn-outline-primary" onclick="history.back();">취소</button>
+			</div>
 		</form>
-	</div>
+		</div>
 		
 	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>
 </body>

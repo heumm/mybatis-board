@@ -9,7 +9,7 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/include/nav.jsp" />
-	<div class="container-fluid h-100">
+		<div class="container container-custom align-self-center">
 		<h2>회원가입 페이지입니다.</h2>
 		<p>${idDuplicate}</p>
 		<form method="post" action="signUp">
@@ -34,7 +34,7 @@
 
 			<input type="submit" class="btn btn-primary" value="SignUp">
 		</form>
-	</div>
+		</div>
 
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 

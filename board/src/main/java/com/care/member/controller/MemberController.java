@@ -34,7 +34,7 @@ public class MemberController {
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("userId");
-		return "index";
+		return "redirect:/";
 	}
 	
 	@RequestMapping("signForm")

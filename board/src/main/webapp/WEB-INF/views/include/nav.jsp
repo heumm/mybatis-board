@@ -77,7 +77,7 @@
 					</div>
 				</c:when>
 				<c:otherwise>
-					${userId }님 <a class="btn btn-light ml-auto" href="logout">SignOut</a>
+					<span class="text-light">${userId }님 반갑습니다.</span><a class="btn btn-light ml-auto" href="logout">SignOut</a>
 				</c:otherwise>
 			</c:choose>
 			<button class="navbar-toggler ml-1" type="button" data-toggle="collapse"

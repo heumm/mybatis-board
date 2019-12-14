@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 
 import com.care.board.dao.BoardDAO;
 import com.care.board.dto.BoardDTO;
+import com.care.board.pagination.Pagination;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -19,7 +20,12 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public void boardList(Model model) {
-		model.addAttribute("articles", dao.boardList());
+		Map<String, Object> map = model.asMap();
+		int curPage = (int)map.get("curPage");
+		System.out.println("서비스 내부 curPage 값 : " + curPage);
+		Pagination pagination = new Pagination(dao.getBoardListCount(), curPage);
+		model.addAttribute("articles", dao.boardList(pagination));
+		model.addAttribute("pagination", pagination);
 	}
 
 	@Override

@@ -20,7 +20,7 @@
 		</script>
 	</c:if>
 	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
-	<div class="container-fluid h-100">	
+	<div class="container-fluid h-100 custom-bg">	
 		<div class="jumbotron">
 		  <h1>Bootstrap Tutorial</h1>
 		  <p>Bootstrap is the most popular HTML, CSS...</p>

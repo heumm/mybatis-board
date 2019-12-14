@@ -1,1 +1,1 @@
-@charset "UTF-8";body,html{height:100%}
+@charset "UTF-8";.custom-bg{}body,html{height:100%;background-color:#661B7B;}.container-custom{height:auto;min-height:700px;border-radius: 3px;padding:20px;margin-top:10%;margin-bottom:10%;background-color:#fff;box-shadow: 3px 3px 10px black;}
