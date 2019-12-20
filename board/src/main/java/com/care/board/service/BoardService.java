@@ -9,5 +9,7 @@ public interface BoardService {
 	public void write(Model model);
 
 	public void getArticle(Model model);
+
+	public void deleteArticle(Model model);
 	
 }

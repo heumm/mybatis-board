@@ -45,5 +45,13 @@ public class BoardController {
 		model.addAttribute("request", request);
 		service.getArticle(model);
 		return "board/article";
+		//왜 uri에 안뜨는
+	}
+	
+	@RequestMapping("deleteArticle")
+	public String deleteArticle(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		service.deleteArticle(model);
+		return "redirect:board";
 	}
 }

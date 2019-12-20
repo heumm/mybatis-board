@@ -25,6 +25,10 @@ public class BoardDTO {
 		this.writerId = writerId;
 	}
 	
+	public BoardDTO(int boardNum) {
+		this.boardNum = boardNum;
+	}
+	
 	public int getBoardNum() {
 		return boardNum;
 	}

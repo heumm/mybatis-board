@@ -17,10 +17,11 @@
 		<p>작성날짜 : ${article.regDate }</p>
 		<p>내용 : <br>${article.content }</p>
 		<div class="d-flex justify-content-end">
-		<input type="button" class="btn btn-secondary mx-1" value="목록" onclick="location.href='board?page=${curPage}'">
+		${curPage }
+		<input type="button" class="btn btn-secondary mx-1" value="목록" onclick="location.href='board?page=${page}'">
 		<c:if test="${userId == article.writerId}">
-			<input type="button" class="btn btn-outline-dark mx-1" value="수정" onclick="location.href='#'">
-			<input type="button" class="btn btn-outline-danger mx-1" value="삭제" onclick="location.href='#'">
+			<input type="button" class="btn btn-outline-dark mx-1" value="수정" onclick="location.href='modifyArticle?num=${num}&page=${page}'">
+			<input type="button" class="btn btn-outline-danger mx-1" value="삭제" onclick="location.href='deleteArticle?num=${num}&page=${page}'">
 		</c:if>
 		</div>
 		</div>

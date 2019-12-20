@@ -23,17 +23,17 @@ public class BoardDAO {
 	public List<BoardDTO> boardList(Pagination pagination) {
 		return sqlSession.selectList("board.articles", pagination);
 	}
-	
-	//현재 페이지 정보를 전달받고, 그 페이지에 해당하는 게시글 갯수만 가져온다.
-
 
 	public void insertArticle(BoardDTO dto) {
 		sqlSession.insert("board.insertArticle", dto);
 	}
 
-
 	public BoardDTO selectArticle(String boardNum) {
 		return sqlSession.selectOne("board.selectArticle", boardNum);
 	}
-
+	
+	public void deleteArticle(BoardDTO dto) {
+		sqlSession.delete("board.deleteArticle", dto);
+	}
+	
 }
