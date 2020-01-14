@@ -11,19 +11,22 @@
 	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>
 		<div class="container container-custom align-self-center d-flex flex-column">
 		
-		<p>작성자 : ${article.writerId }</p>
-		<h4 class="container p-3 border bg-light">제목 : ${article.title }</h4>
-		
-		<p>작성날짜 : ${article.regDate }</p>
-		<p>내용 : <br>${article.content }</p>
-		<div class="d-flex justify-content-end">
-		${curPage }
-		<input type="button" class="btn btn-secondary mx-1" value="목록" onclick="location.href='board?page=${page}'">
-		<c:if test="${userId == article.writerId}">
-			<input type="button" class="btn btn-outline-dark mx-1" value="수정" onclick="location.href='modifyArticle?num=${num}&page=${page}'">
-			<input type="button" class="btn btn-outline-danger mx-1" value="삭제" onclick="location.href='deleteArticle?num=${num}&page=${page}'">
-		</c:if>
-		</div>
+			<p>작성자 : ${article.writerId }</p>
+			<h4 class="container p-3 border bg-light">제목 : ${article.title }</h4>
+			
+			<p>작성날짜 : ${article.regDate }</p>
+			<p>내용 : <br>${article.content }</p>
+			<div class="d-flex justify-content-between">
+				<div>
+					<input type="button" class="btn btn-secondary mx-1" value="목록" onclick="location.href='board?page=${page}'">
+				</div>
+				<div>
+					<c:if test="${userId == article.writerId}">
+						<input type="button" class="btn btn-outline-dark mx-1" value="수정" onclick="location.href='modifyArticle?num=${num}&page=${page}'">
+						<input type="button" class="btn btn-outline-danger mx-1" value="삭제" onclick="location.href='deleteArticle?num=${num}&page=${page}'">
+					</c:if>
+				</div>
+			</div>
 		</div>
 		
 	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>

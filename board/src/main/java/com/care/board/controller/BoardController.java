@@ -24,7 +24,6 @@ public class BoardController {
 		System.out.println("현재 페이지 : " + curPage);
 		model.addAttribute("curPage", curPage);
 		service.boardList(model);
-		
 		return "board/board";
 	}
 	
@@ -45,7 +44,6 @@ public class BoardController {
 		model.addAttribute("request", request);
 		service.getArticle(model);
 		return "board/article";
-		//왜 uri에 안뜨는
 	}
 	
 	@RequestMapping("deleteArticle")

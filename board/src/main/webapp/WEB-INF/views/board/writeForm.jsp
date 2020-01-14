@@ -31,7 +31,7 @@
 		</table>
 			<input type="hidden" name="writerId" value="${userId}">
 			<div class="d-flex justify-content-end">
-			<input type="submit" class="btn btn-secondary" value="글쓰기">&nbsp;<button type="button" class="btn btn-outline-primary" onclick="history.back();">취소</button>
+			<input type="submit" class="btn btn-secondary" value="글쓰기">&nbsp;<input type="button" class="btn btn-outline-primary" value="취소" onclick="history.back();">
 			</div>
 		</form>
 		</div>

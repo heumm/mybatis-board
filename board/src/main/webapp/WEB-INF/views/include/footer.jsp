@@ -27,7 +27,7 @@
     <a class="facebook btn btn-outline-primary btn-icon" href="https://www.facebook.com/bootstrapbayofficial/" target="_blank">
       <i class="fab fa-facebook"></i>
       <span class="sr-only">View our Facebook Profile
-        <span>
+        </span>
     </a>
     <a class="github btn btn-outline-primary btn-icon" href="https://github.com/bootstrapbay" target="_blank">
       <i class="fab fa-github"></i>
