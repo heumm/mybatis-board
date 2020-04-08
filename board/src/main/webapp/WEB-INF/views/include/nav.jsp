@@ -43,7 +43,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<div class="container-fluid">
-			<a class="navbar-brand d-flex align-items-center" href="/controller">Home</a>
+			<a class="navbar-brand d-flex align-items-center" href="/">Home</a>
 
 			<div class="collapse navbar-collapse text-center"
 				id="navbarNavDropdown-1">
@@ -72,12 +72,12 @@
 				<c:when test="${userId == null }">
 				
 					<div class="ml-auto">
-					<a class="btn btn-outline-light ml-auto" href="loginForm">SignIn</a>
-					<a class="btn btn-light" href="signForm">SignUp</a>
+					<a class="btn btn-outline-light ml-auto" href="loginForm">로그인</a>
+					<a class="btn btn-light" href="signForm">회원가입</a>
 					</div>
 				</c:when>
 				<c:otherwise>
-					<span class="text-light">${userId }님 반갑습니다.</span><a class="btn btn-light ml-auto" href="logout">SignOut</a>
+					<span class="text-light">${userId }님 반갑습니다.</span><a class="btn btn-light ml-auto" href="logout">로그아웃</a>
 				</c:otherwise>
 			</c:choose>
 			<button class="navbar-toggler ml-1" type="button" data-toggle="collapse"

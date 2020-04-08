@@ -16,7 +16,7 @@
     <c:if test="${signed != null}">
 		<script>
 			alert('${signed}');
-			location.href="/controller"
+			location.href="/"
 		</script>
 	</c:if>
 	<jsp:include page="/WEB-INF/views/include/nav.jsp"/>

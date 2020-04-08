@@ -65,12 +65,12 @@
 				</c:forEach>
 				<c:choose>
 					<c:when test="${pagination.curRange == pagination.rangeCnt}">
-						<li class="page-item disabled"><a class="page-link">끝</a></li>
 						<li class="page-item disabled"><a class="page-link">다음</a></li>
+						<li class="page-item disabled"><a class="page-link">끝</a></li>
 					</c:when>
 					<c:otherwise>
-						<li class="page-item"><a class="page-link" href="board?page=${pagination.pageCnt}">끝</a></li>
 						<li class="page-item"><a class="page-link" href="board?page=${pagination.nextPage}">다음</a></li>
+						<li class="page-item"><a class="page-link" href="board?page=${pagination.pageCnt}">끝</a></li>
 					</c:otherwise>
 				</c:choose>
 				

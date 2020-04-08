@@ -23,8 +23,11 @@ public class MemberServiceImpl implements MemberService {
 	public void login(ModelAndView model) {
 		Map<String, Object> map = model.getModel();
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
+		String referrer = request.getParameter("referrer");
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
+//		String url = request.getHeader("referer");
+//		System.out.println(url);
 		MemberDTO dto = dao.selectMember(id);
 		if(dto != null) {	
 			if(dto.getPw().equals(pw)) {	
