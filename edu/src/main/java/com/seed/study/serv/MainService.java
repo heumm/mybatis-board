@@ -12,8 +12,8 @@ public interface MainService {
 	public int insertUser1(InsertUser iu);
 	
 	public int insertUser2(InsertUser iu);
-//	
-//	public int deleteUser1(int userNum);
-//	
-//	public int deleteUser2(int userNum);
+	
+	public int deleteUser1(int userNum);
+	
+	public int deleteUser2(int userNum);
 }

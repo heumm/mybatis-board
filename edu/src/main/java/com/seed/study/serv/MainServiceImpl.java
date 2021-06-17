@@ -29,17 +29,15 @@ public class MainServiceImpl implements MainService{
 	public int insertUser2(InsertUser iu) {
 		return mainDao.insertUser2(iu);
 	}
-//
-//	@Override
-//	public int deleteUser1(int userNum) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	public int deleteUser2(int userNum) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
+
+	@Override
+	public int deleteUser1(int userNum) {
+		return mainDao.deleteUser1(userNum);
+	}
+
+	@Override
+	public int deleteUser2(int userNum) {
+		return mainDao.deleteUser2(userNum);
+	}
 
 }
