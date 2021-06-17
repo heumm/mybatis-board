@@ -27,11 +27,11 @@
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" /> 
     </context:component-scan>
     
-	<!-- <mvc:interceptors>
+	<mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <beans:bean id="loggerInterceptor" class="com.seed.study.common.LoggerInterceptor"></beans:bean>
         </mvc:interceptor>
-    </mvc:interceptors> -->
+    </mvc:interceptors>
 	
 </beans:beans>

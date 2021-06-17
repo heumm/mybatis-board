@@ -12,8 +12,8 @@
 
 <!-- typeAliases -->
 <typeAliases>
-	<!-- <typeAlias type="com.seed.study.vo.MainVo" alias="Main"/>
-	<typeAlias type="com.seed.study.vo.InsertUser" alias="Iu"/> -->
+	<typeAlias type="com.seed.study.vo.MainVo" alias="Main"/>
+	<!-- <typeAlias type="com.seed.study.vo.InsertUser" alias="Iu"/> -->
 </typeAliases>
 
 <!-- DB정보를 썼던 부분 environments 엘리먼트로 dataSource 등등의 정보를 썼는데 스프링에서는 

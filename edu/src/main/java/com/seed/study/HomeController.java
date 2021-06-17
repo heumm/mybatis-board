@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
  * ====================[type]====================
  * @파일명:HomeController.java
  * @작성일자:2021. 3. 16.
- * @작성자:조한흠
+ * @작성자:이대윤
  * @프로젝트이름:edu
  * @프로그램설명:home
  * @변경이력:
