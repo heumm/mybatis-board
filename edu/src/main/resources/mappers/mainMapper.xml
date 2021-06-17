@@ -31,4 +31,12 @@
   		VALUES
   		(NVL((SELECT max(USER_NO)+1 FROM USER_INFO),1),#{phone},#{email})
   	</insert>
+  	<delete id="deleteUser1" parameterType="int">
+  		DELETE FROM USER_INFO
+  		WHERE USER_NO = #{userNum}
+  	</delete>
+  	<delete id="deleteUser2" parameterType="int">
+  		DELETE FROM USER_TABLE
+  		WHERE USER_NO = #{userNum}
+  	</delete>
   </mapper>

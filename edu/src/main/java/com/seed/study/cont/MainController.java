@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -85,7 +86,7 @@ public class MainController {
 		if (result1 > 0) {
 			result2 = mainService.insertUser2(iu);
 			if (result2 > 0) {
-				logger.info("[INSERT 성공");
+				logger.info("[INSERT 성공]");
 				resultMap.put("status", "success");
 			} else {
 				logger.info("[INSERT 실패]");
@@ -100,16 +101,32 @@ public class MainController {
 	
 	@RequestMapping(value = "deleteUser.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String deleteUser(HttpServletRequest request, HttpServletResponse response, @RequestBody ) throws Exception {
+	public String deleteUser(HttpServletRequest request, HttpServletResponse response, @RequestBody ArrayList<Integer> data) throws Exception {
 		logger.info("[유저삭제]");
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
+		
+		Map<String, Object> resultMap = new HashMap<String, Object>();
 		int result1 = 0;
 		int result2 = 0;
-		
-		result1 = mainService.deleteUser1();
-		
-		
-		return "";
+	
+		for (Integer userNum : data) {
+			result1 = mainService.deleteUser1(userNum);
+			if (result1 > 0) {
+				result2 = mainService.deleteUser2(userNum);
+				if (result2 > 0) {
+					logger.info("[DELETE 성공]");
+					resultMap.put("status", "success");
+				} else {
+					logger.info("[DELETE 실패]");
+					resultMap.put("status", "fail");
+				}
+			} else {
+				logger.info("[DELETE 실패]");
+				resultMap.put("status", "fail");
+			}
+			
+		}
+		return new Gson().toJson(resultMap);
 	}
 }

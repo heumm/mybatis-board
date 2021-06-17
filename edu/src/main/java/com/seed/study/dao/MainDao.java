@@ -30,6 +30,6 @@ public class MainDao {
 		return sqlSession.delete(Namespace + ".deleteUser1", userNum);
 	}
 	public int deleteUser2(int userNum) {
-		return sqlSession.delete(Namespace + ".deleteUser1", userNum);
+		return sqlSession.delete(Namespace + ".deleteUser2", userNum);
 	}
 }
