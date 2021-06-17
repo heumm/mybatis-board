@@ -1,6 +1,7 @@
 package com.seed.study.cont;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -97,4 +98,18 @@ public class MainController {
 		return new Gson().toJson(resultMap);
 	}
 	
+	@RequestMapping(value = "deleteUser.do", method = RequestMethod.POST)
+	@ResponseBody
+	public String deleteUser(HttpServletRequest request, HttpServletResponse response, @RequestBody ) throws Exception {
+		logger.info("[유저삭제]");
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
+		int result1 = 0;
+		int result2 = 0;
+		
+		result1 = mainService.deleteUser1();
+		
+		
+		return "";
+	}
 }

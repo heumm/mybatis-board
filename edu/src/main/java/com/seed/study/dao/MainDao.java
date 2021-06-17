@@ -26,10 +26,10 @@ public class MainDao {
 	public int insertUser2(InsertUser iu) {
 		return sqlSession.insert(Namespace + ".insertUser2", iu);
 	}
-//	public int deleteUser1(int userNum) {
-//		return sqlSession.delete(Namespace + ".deleteUser1", du);
-//	}
-//	public int deleteUser1(int userNum) {
-//		return sqlSession.delete(Namespace + ".deleteUser1", du);
-//	}
+	public int deleteUser1(int userNum) {
+		return sqlSession.delete(Namespace + ".deleteUser1", userNum);
+	}
+	public int deleteUser2(int userNum) {
+		return sqlSession.delete(Namespace + ".deleteUser1", userNum);
+	}
 }
