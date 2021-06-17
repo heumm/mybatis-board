@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.seed.study.vo.InsertUser;
 import com.seed.study.vo.MainVo;
 
 @Repository("mainDao")
@@ -19,12 +20,12 @@ public class MainDao {
 		return (ArrayList) sqlSession.selectList(Namespace + ".selectList");
 	}
 	
-//	public int insertUser1(InsertUser iu) {
-//		return sqlSession.insert(Namespace + ".insertUser1", iu);
-//	}
-//	public int insertUser2(InsertUser iu) {
-//		return sqlSession.insert(Namespace + ".insertUser2", iu);
-//	}
+	public int insertUser1(InsertUser iu) {
+		return sqlSession.insert(Namespace + ".insertUser1", iu);
+	}
+	public int insertUser2(InsertUser iu) {
+		return sqlSession.insert(Namespace + ".insertUser2", iu);
+	}
 //	public int deleteUser1(int userNum) {
 //		return sqlSession.delete(Namespace + ".deleteUser1", du);
 //	}

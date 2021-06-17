@@ -1,5 +1,6 @@
 package com.seed.study.cont;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.seed.study.serv.MainService;
+import com.seed.study.vo.InsertUser;
 import com.seed.study.vo.MainVo;
 
 /**
@@ -62,6 +64,36 @@ public class MainController {
 		ArrayList<MainVo> userList = mainService.selectList();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("userList", userList);
+		return new Gson().toJson(resultMap);
+	}
+	
+	@RequestMapping(value = "insertUser.do", method = RequestMethod.POST)
+	@ResponseBody
+	public String insertUser(HttpServletRequest request, HttpServletResponse response, InsertUser iu) throws IOException {
+		
+		logger.info("[유저추가]");
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
+		
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		int result1 = 0;
+		int result2 = 0;
+		
+		result1 = mainService.insertUser1(iu);
+		
+		if (result1 > 0) {
+			result2 = mainService.insertUser2(iu);
+			if (result2 > 0) {
+				logger.info("[INSERT 성공");
+				resultMap.put("status", "success");
+			} else {
+				logger.info("[INSERT 실패]");
+				resultMap.put("status", "fail");
+			}
+		} else {
+			logger.info("[INSERT 실패");
+			resultMap.put("status", "fail");
+		}
 		return new Gson().toJson(resultMap);
 	}
 	
